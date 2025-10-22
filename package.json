@@ -1,0 +1,20 @@
+{
+  "name": "ea-website",
+  "version": "1.0.0",
+  "description": "High-performance Azure Static Web App - Primary prospect touchpoint",
+  "scripts": {
+    "dev": "npx live-server --port=3000 --open=/ --watch=src",
+    "start": "npm run dev",
+    "test": "echo \"Add tests here\" && exit 0"
+  },
+  "keywords": [
+    "azure",
+    "static-web-app",
+    "performance"
+  ],
+  "author": "",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
