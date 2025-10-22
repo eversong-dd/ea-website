@@ -71,6 +71,10 @@ resource webApp 'Microsoft.Web/sites@2023-12-01' = {
           value: 'production'
         }
         {
+          name: 'PORT'
+          value: '8080'
+        }
+        {
           name: 'NEXT_TELEMETRY_DISABLED'
           value: '1'
         }
