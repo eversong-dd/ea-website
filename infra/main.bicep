@@ -63,6 +63,7 @@ module webApp 'modules/web-app.bicep' = {
     managedIdentityId: managedIdentity.id
     appInsightsConnectionString: monitoring.outputs.appInsightsConnectionString
     storageAccountName: storage.outputs.storageAccountName
+    logAnalyticsWorkspaceId: monitoring.outputs.logAnalyticsWorkspaceId
   }
 }
 

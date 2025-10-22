@@ -16,9 +16,3 @@ services:
     project: .
     language: js
     host: appservice
-    hooks:
-      prepackage:
-        shell: sh
-        run: npm install && npm run build
-        continueOnError: false
-        interactive: false

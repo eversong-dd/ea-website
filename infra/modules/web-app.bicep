@@ -19,6 +19,9 @@ param appInsightsConnectionString string
 @description('Storage account name for video assets')
 param storageAccountName string
 
+@description('Log Analytics Workspace ID for diagnostics')
+param logAnalyticsWorkspaceId string
+
 // App Service Plan (Premium v3 for production performance)
 resource appServicePlan 'Microsoft.Web/serverfarms@2023-12-01' = {
   name: 'asp-${resourceToken}'
@@ -101,51 +104,30 @@ resource webApp 'Microsoft.Web/sites@2023-12-01' = {
   }
 }
 
-// App Service Site Extension (required for azd deployment)
-resource siteExtension 'Microsoft.Web/sites/siteextensions@2023-12-01' = {
-  parent: webApp
-  name: 'Microsoft.ApplicationInsights.AzureWebSites'
-}
-
 // Diagnostic settings for monitoring
 resource diagnosticSettings 'Microsoft.Insights/diagnosticSettings@2021-05-01-preview' = {
   name: 'webapp-diagnostics'
   scope: webApp
   properties: {
+    workspaceId: logAnalyticsWorkspaceId
     logs: [
       {
         category: 'AppServiceHTTPLogs'
         enabled: true
-        retentionPolicy: {
-          enabled: true
-          days: 30
-        }
       }
       {
         category: 'AppServiceConsoleLogs'
         enabled: true
-        retentionPolicy: {
-          enabled: true
-          days: 30
-        }
       }
       {
         category: 'AppServiceAppLogs'
         enabled: true
-        retentionPolicy: {
-          enabled: true
-          days: 30
-        }
       }
     ]
     metrics: [
       {
         category: 'AllMetrics'
         enabled: true
-        retentionPolicy: {
-          enabled: true
-          days: 30
-        }
       }
     ]
   }
