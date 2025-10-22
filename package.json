@@ -1,20 +1,32 @@
 {
   "name": "ea-website",
-  "version": "1.0.0",
-  "description": "High-performance Azure Static Web App - Primary prospect touchpoint",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "dev": "npx live-server --port=3000 --open=/ --watch=src",
-    "start": "npm run dev",
-    "test": "echo \"Add tests here\" && exit 0"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
   },
-  "keywords": [
-    "azure",
-    "static-web-app",
-    "performance"
-  ],
-  "author": "",
-  "license": "UNLICENSED",
+  "dependencies": {
+    "@studio-freight/lenis": "^1.0.42",
+    "framer-motion": "^12.23.24",
+    "gsap": "^3.13.0",
+    "lenis": "^1.3.11",
+    "locomotive-scroll": "^4.1.4",
+    "next": "16.0.0",
+    "react": "19.2.0",
+    "react-dom": "19.2.0"
+  },
   "devDependencies": {
-    "live-server": "^1.2.2"
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "babel-plugin-react-compiler": "1.0.0",
+    "eslint": "^9",
+    "eslint-config-next": "16.0.0",
+    "tailwindcss": "^4",
+    "typescript": "^5"
   }
 }
