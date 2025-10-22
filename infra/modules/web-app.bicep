@@ -65,7 +65,6 @@ resource webApp 'Microsoft.Web/sites@2023-12-01' = {
       ftpsState: 'Disabled'
       minTlsVersion: '1.2'
       http20Enabled: true
-      appCommandLine: 'node server.js'
       appSettings: [
         {
           name: 'NODE_ENV'

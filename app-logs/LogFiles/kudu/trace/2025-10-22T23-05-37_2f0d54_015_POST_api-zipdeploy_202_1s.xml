@@ -1,0 +1,15 @@
+<step title="Incoming Request" date="2025-10-22T23:05:37.365" instance="2f0d54" url="/api/zipdeploy?isAsync=true" method="POST" type="request" pid="821,1,27" Accept="application/json" Host="app-rixoirdj4a3x6.scm.azurewebsites.net" User-Agent="azsdk-go-zip-deploy/1.0.0 (go1.25.0 X:loopvar; linux),azdev/1.20.1 (Go go1.25.0 X:loopvar; linux/amd64) GhActions" Accept-Encoding="gzip" Authorization="Bea..." Content-Type="application/octet-stream" Content-Length="2487634" x-ms-correlation-request-id="260955a5cdcbdb198f79fde1c389fad6" X-ARR-LOG-ID="260955a5-cdcb-db19-8f79-fde1c389fad6" CLIENT-IP="52.176.35.115:24600" X-SITE-DEPLOYMENT-ID="app-rixoirdj4a3x6" WAS-DEFAULT-HOSTNAME="app-rixoirdj4a3x6.scm.azurewebsites.net" X-Forwarded-Proto="https" X-AppService-Proto="https" X-Forwarded-TlsVersion="1.3" X-WAWS-Unencoded-URL="/api/zipdeploy?isAsync=true" X-Client-IP="52.176.35.115" X-Client-Port="24600" >
+  <step title="Cleanup Xml Logs" date="2025-10-22T23:05:37.366" /><!-- duration: 3ms -->
+  <step title="ZipPushDeploy" date="2025-10-22T23:05:37.374" >
+    <step title="ZipDeploy. Extract zip." date="2025-10-22T23:05:37.377" /><!-- duration: 1ms -->
+    <step title="Starting PushDeployAsync" date="2025-10-22T23:05:37.380" /><!-- duration: 1ms -->
+    <step title="Writing artifact to /tmp/zipdeploy/62dbe19a-cd39-4c35-88fb-b8a7b7c36256.zip" date="2025-10-22T23:05:37.385" >
+      <step title="Writing multipart request body to /tmp/zipdeploy/62dbe19a-cd39-4c35-88fb-b8a7b7c36256.zip" date="2025-10-22T23:05:37.386" /><!-- duration: 1ms -->
+    </step><!-- duration: 599ms -->
+    <step title="Start deployment in the background" date="2025-10-22T23:05:37.988" >
+      <step title="Acquiring Deployment Lock" date="2025-10-22T23:05:37.993" /><!-- duration: 1ms -->
+      <step title="Acquired Deployment Lock" date="2025-10-22T23:05:38.011" /><!-- duration: 1ms -->
+    </step><!-- duration: 99ms -->
+  </step><!-- duration: 715ms -->
+  <step title="Outgoing response" date="2025-10-22T23:05:38.091" type="response" statusCode="202" statusText="Accepted" /><!-- duration: 2ms -->
+</step><!-- duration: 729ms -->
