@@ -4,9 +4,6 @@ const nextConfig: NextConfig = {
   /* React Compiler for optimized rendering */
   reactCompiler: true,
   
-  /* Output configuration for Azure deployment */
-  output: 'standalone',
-  
   /* Image optimization */
   images: {
     formats: ['image/avif', 'image/webp'],

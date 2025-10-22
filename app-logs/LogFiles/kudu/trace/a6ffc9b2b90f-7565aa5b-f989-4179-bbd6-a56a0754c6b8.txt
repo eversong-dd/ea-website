@@ -1,2 +1,0 @@
-2025-10-22T21:19:45  Startup Request, url: /api/siteextensions/Microsoft.ApplicationInsights.AzureWebSites?api-version=2023-12-01, method: PUT, type: request, pid: 821,1,14, SCM_DO_BUILD_DURING_DEPLOYMENT: true, ScmType: None
-2025-10-22T21:19:45    Outgoing response, type: response, statusCode: 404, statusText: NotFound
