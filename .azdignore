@@ -1,0 +1,44 @@
+# Azure Developer CLI ignore file
+# Exclude files from deployment package
+
+# Node modules (will be installed during build)
+node_modules/
+
+# Next.js build artifacts
+.next/
+
+# Development files
+.git/
+.vscode/
+*.md
+README.md
+
+# Test and dev files
+*.test.*
+*.spec.*
+__tests__/
+tests/
+
+# Logs
+*.log
+npm-debug.log*
+app-logs*/
+*.zip
+
+# Environment files
+.env*
+!.env.example
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+tmp/
+temp/
