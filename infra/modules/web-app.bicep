@@ -1,5 +1,5 @@
 // Web App Service module for Next.js application
-// Premium v3 tier for high-performance video and animation workloads
+// Environment-specific tiers: Test (B1) for cost savings, Prod (S1) for performance
 
 @description('Primary Azure region')
 param location string
@@ -9,6 +9,9 @@ param resourceToken string
 
 @description('Resource tags')
 param tags object
+
+@description('Environment name (test = B1, prod = S1)')
+param environmentName string
 
 @description('Managed Identity resource ID')
 param managedIdentityId string
@@ -22,18 +25,31 @@ param storageAccountName string
 @description('Log Analytics Workspace ID for diagnostics')
 param logAnalyticsWorkspaceId string
 
-// App Service Plan (Premium v3 for production performance)
+// Determine SKU based on environment
+var isTestEnvironment = environmentName == 'test'
+var appServiceSku = isTestEnvironment ? {
+  name: 'B1'
+  tier: 'Basic'
+  size: 'B1'
+  family: 'B'
+  capacity: 1
+} : {
+  name: 'S1'
+  tier: 'Standard'
+  size: 'S1'
+  family: 'S'
+  capacity: 1
+}
+
+// Determine if Always On should be enabled (not available in Basic tier)
+var alwaysOnEnabled = !isTestEnvironment
+
+// App Service Plan (B1 for test, S1 for prod)
 resource appServicePlan 'Microsoft.Web/serverfarms@2023-12-01' = {
   name: 'asp-${resourceToken}'
   location: location
   tags: tags
-  sku: {
-    name: 'P1v3'
-    tier: 'PremiumV3'
-    size: 'P1v3'
-    family: 'Pv3'
-    capacity: 1
-  }
+  sku: appServiceSku
   kind: 'linux'
   properties: {
     reserved: true // Linux App Service Plan
@@ -61,7 +77,7 @@ resource webApp 'Microsoft.Web/sites@2023-12-01' = {
     clientAffinityEnabled: false
     siteConfig: {
       linuxFxVersion: 'NODE|20-lts'
-      alwaysOn: true
+      alwaysOn: alwaysOnEnabled
       ftpsState: 'Disabled'
       minTlsVersion: '1.2'
       http20Enabled: true

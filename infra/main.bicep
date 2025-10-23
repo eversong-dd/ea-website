@@ -60,6 +60,7 @@ module webApp 'modules/web-app.bicep' = {
     location: location
     resourceToken: resourceToken
     tags: tags
+    environmentName: environmentName
     managedIdentityId: managedIdentity.id
     appInsightsConnectionString: monitoring.outputs.appInsightsConnectionString
     storageAccountName: storage.outputs.storageAccountName
