@@ -1,22 +1,27 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/animations/SmoothScroll";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
-  title: "EA Website - High Performance Cinematic Experience",
-  description: "A premium website with cutting-edge animations, video backgrounds, and smooth scrolling experiences.",
-  keywords: ["Next.js", "Azure", "Animation", "GSAP", "Framer Motion"],
+  title: "Eversong AI - Making AI Valuable, Secure and Practical for SMEs on Microsoft",
+  description: "We help European mid-sized businesses adopt AI safely and effectively within the Microsoft ecosystem. Elite consulting with calm authority and intellectual clarity.",
+  keywords: [
+    "AI Consulting",
+    "Microsoft AI",
+    "AI Strategy",
+    "Azure AI",
+    "Business AI Adoption",
+    "AI Security",
+    "SME AI Solutions",
+    "AI Executive Sprint",
+  ],
+  authors: [{ name: "Eversong AI" }],
+  openGraph: {
+    title: "Eversong AI - Clarity on AI for Your Business",
+    description: "Practical, secure adoption on Microsoft—without the noise.",
+    type: "website",
+    locale: "en_US",
+  },
 };
 
 export default function RootLayout({
@@ -26,9 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className="antialiased">
         <SmoothScroll />
         {children}
       </body>

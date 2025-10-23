@@ -2,43 +2,58 @@
 
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
+import Link from 'next/link';
 
 interface VideoHeroProps {
   videoSrc?: string;
-  title: string;
-  subtitle?: string;
-  overlay?: boolean;
+  headline: string;
+  subline?: string;
+  ctaText?: string;
+  ctaHref?: string;
 }
 
 export default function VideoHero({
   videoSrc = '/videos/hero-bg.mp4',
-  title,
-  subtitle,
-  overlay = true,
+  headline,
+  subline,
+  ctaText,
+  ctaHref = '/contact',
 }: VideoHeroProps) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const titleRef = useRef<HTMLHeadingElement>(null);
-  const subtitleRef = useRef<HTMLParagraphElement>(null);
+  const headlineRef = useRef<HTMLHeadingElement>(null);
+  const sublineRef = useRef<HTMLParagraphElement>(null);
+  const ctaRef = useRef<HTMLAnchorElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Cinematic entrance animation
+      // Calm, restrained entrance animation
       const tl = gsap.timeline({
-        defaults: { ease: 'power4.out' },
+        defaults: { ease: 'power2.out' },
       });
 
-      tl.from(titleRef.current, {
-        y: 100,
+      tl.from(headlineRef.current, {
+        y: 40,
         opacity: 0,
-        duration: 1.2,
-        delay: 0.3,
+        duration: 1.4,
+        delay: 0.5,
       });
 
-      if (subtitleRef.current) {
+      if (sublineRef.current) {
         tl.from(
-          subtitleRef.current,
+          sublineRef.current,
           {
-            y: 50,
+            y: 20,
+            opacity: 0,
+            duration: 1.2,
+          },
+          '-=0.8'
+        );
+      }
+
+      if (ctaRef.current) {
+        tl.from(
+          ctaRef.current,
+          {
             opacity: 0,
             duration: 1,
           },
@@ -52,37 +67,45 @@ export default function VideoHero({
 
   return (
     <div ref={containerRef} className="relative h-screen w-full overflow-hidden">
-      {/* Video Background */}
+      {/* Video Background - calm, slow motion aesthetic */}
       <video
         autoPlay
         loop
         muted
         playsInline
-        className="absolute inset-0 h-full w-full object-cover"
+        className="absolute inset-0 h-full w-full object-cover scale-105"
       >
         <source src={videoSrc} type="video/mp4" />
       </video>
 
-      {/* Overlay */}
-      {overlay && (
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70" />
-      )}
+      {/* Subtle overlay for readability */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#001238]/60 via-[#001238]/40 to-[#001238]/70" />
 
-      {/* Content */}
-      <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center text-white">
+      {/* Content - Swiss minimalist centered layout */}
+      <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
         <h1
-          ref={titleRef}
-          className="mb-6 text-5xl font-bold tracking-tight sm:text-6xl md:text-7xl lg:text-8xl"
+          ref={headlineRef}
+          className="mb-6 max-w-4xl text-4xl font-light tracking-tight text-[#F1F1F1] sm:text-5xl md:text-6xl lg:text-7xl"
+          style={{ letterSpacing: '-0.02em' }}
         >
-          {title}
+          {headline}
         </h1>
-        {subtitle && (
+        {subline && (
           <p
-            ref={subtitleRef}
-            className="max-w-2xl text-xl font-light text-white/90 sm:text-2xl"
+            ref={sublineRef}
+            className="mb-8 max-w-2xl text-lg font-light text-[#F1F1F1]/90 sm:text-xl md:text-2xl"
           >
-            {subtitle}
+            {subline}
           </p>
+        )}
+        {ctaText && (
+          <Link
+            ref={ctaRef}
+            href={ctaHref}
+            className="text-base font-light text-[#F1F1F1] underline decoration-1 underline-offset-4 transition-opacity hover:opacity-60"
+          >
+            {ctaText}
+          </Link>
         )}
       </div>
     </div>

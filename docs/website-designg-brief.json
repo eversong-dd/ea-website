@@ -1,0 +1,340 @@
+{
+  "brand": {
+    "name": "Eversong AI",
+    "tagline": "Making AI valuable, secure and practical for SMEs on Microsoft",
+    "mission_internal_only": "We help European mid-sized businesses adopt AI safely and effectively within the Microsoft ecosystem.",
+    "audience": "C-level executives (CEO, CFO, CIO) seeking clarity, trust, and actionable AI adoption strategies.",
+    "emotion": "Finally someone that explains AI to me.",
+    "style": {
+      "tone": "Elite consulting, calm authority, intellectual clarity.",
+      "visual": "Swiss-minimalist, premium, generous whitespace, elegant typography.",
+      "colors": {
+        "primary": "#001238",
+        "secondary": "#F1F1F1"
+      },
+      "fonts": [
+        "Corbel",
+        "Helvetica",
+        "Roboto"
+      ]
+    },
+    "global_rules": {
+      "use_icons": false,
+      "navigation": "Users navigate via images, sections, tiles, and hyperlink-styled titles only.",
+      "booking_visibility": "Teams/Call booking link is available but discreet, not a primary CTA."
+    }
+  },
+  "site_structure": {
+    "navigation_items": [
+      "Home",
+      "About",
+      "Services",
+      "AI Executive Sprint",
+      "Case Studies",
+      "Insights",
+      "Contact"
+    ],
+    "cta_behavior": {
+      "primary_text": "Talk to us",
+      "secondary_text": "Discuss your AI Sprint",
+      "style": "Subtle text links; avoid button-heavy patterns."
+    }
+  },
+  "pages": {
+    "home": {
+      "type": "hero_plus_insights",
+      "layout": {
+        "hero": {
+          "background": {
+            "type": "video",
+            "mood": "calm, visionary, slow motion (abstract light, skyline, or data flow)",
+            "loop": true,
+            "muted": true
+          },
+          "overlay": {
+            "headline": "Clarity on AI for your business.",
+            "subline": "Practical, secure adoption on Microsoft—without the noise.",
+            "text_color": "#F1F1F1"
+          },
+          "cta_inline_link": "Talk to us"
+        },
+        "insight_tiles": {
+          "placement": "floating below hero, slight overlap as on McKinsey.com",
+          "count": 4,
+          "items_example": [
+            {
+              "title": "The AI Deadlock",
+              "href": "/insights/the-ai-deadlock"
+            },
+            {
+              "title": "The Executive Sprint",
+              "href": "/ai-executive-sprint"
+            },
+            {
+              "title": "Case: Powercrumbs",
+              "href": "/case-studies/powercrumbs"
+            },
+            {
+              "title": "Scaling AI Safely",
+              "href": "/insights/scaling-ai-safely"
+            }
+          ],
+          "tile_style": {
+            "image_treatment": "desaturated, high-contrast overlay on hover",
+            "text_overlay": "use white or Ink Blue for accessibility",
+            "hover_effect": "gentle elevation and shadow"
+          }
+        }
+      },
+      "copy_examples": {
+        "hero_headline": "Finally, clarity on AI.",
+        "hero_subline": "We make AI valuable, secure and practical—on Microsoft.",
+        "tile_teaser": "Read the latest"
+      },
+      "tone": "Authoritative, calm, succinct."
+    },
+    "about": {
+      "layout": {
+        "structure": "two-column; left text, right abstract still or subtle loop video (very restrained).",
+        "scroll_behavior_reference": "McKinsey.com homepage transitions; smooth, understated.",
+        "sections": [
+          {
+            "title": "Who we are",
+            "content": "Eversong AI is a Swiss consulting firm helping SMEs translate AI into measurable business outcomes with clarity and control."
+          },
+          {
+            "title": "Our view",
+            "content": "AI should augment people and processes. We focus on secure, value-driven adoption within the Microsoft ecosystem."
+          },
+          {
+            "title": "How we work",
+            "content": "Executive alignment, enterprise-grade safeguards, pragmatic delivery. No theatrics—just outcomes."
+          }
+        ]
+      },
+      "copy_examples": {
+        "section_intro": "A firm built for clarity.",
+        "paragraph_snippet": "We bridge intent and execution—linking strategy to hands-on delivery."
+      },
+      "tone": "Corporate credibility, concise, no jargon."
+    },
+    "services": {
+      "layout": {
+        "style": "three-card grid (no icons), image-backed or color-block headers; each title is a hyperlink.",
+        "cards": [
+          {
+            "title": "AI Strategy Consulting",
+            "href": "/services/ai-strategy",
+            "description": "Align AI initiatives with business priorities. Define guardrails, economics, and outcomes."
+          },
+          {
+            "title": "Integration & Automation",
+            "href": "/services/integration-automation",
+            "description": "Implement intelligent workflows across Microsoft 365 and Azure to remove operational friction."
+          },
+          {
+            "title": "Data Engineering",
+            "href": "/services/data-engineering",
+            "description": "Establish secure, scalable data foundations for analytics, Copilot, and agents."
+          }
+        ],
+        "note": "Titles act as navigation. Avoid pictograms or iconography."
+      },
+      "copy_examples": {
+        "section_headline": "Executive services, delivered with discipline.",
+        "microcopy": "Measured, secure, production-grade."
+      },
+      "tone": "Structured, executive, pragmatic."
+    },
+    "ai_executive_sprint": {
+      "layout": {
+        "hero": {
+          "type": "static_image",
+          "overlay": {
+            "headline": "Turn AI confusion into a 90-day execution plan.",
+            "subline": "A focused executive sprint that produces a board-ready roadmap and safeguards."
+          }
+        },
+        "sections": [
+          {
+            "title": "Clarity on the AI Opportunity",
+            "desc": "Landscape, economics, and use cases relevant to your business."
+          },
+          {
+            "title": "Readiness & Risk Assessment",
+            "desc": "Systems, data, and process readiness with data-protection guardrails."
+          },
+          {
+            "title": "90-Day Execution Plan",
+            "desc": "Business-case driven, sequenced, and resourced for delivery."
+          },
+          {
+            "title": "Launch & Momentum Playbook",
+            "desc": "Accountabilities, milestones, and success measures to sustain progress."
+          }
+        ],
+        "guarantee_note": "If we don’t achieve a prioritized AI execution plan, we’ll continue at no extra cost.",
+        "pricing": {
+          "base": "€12,000",
+          "options": [
+            "M365 Copilot training €3,000",
+            "Weekly checkup calls €1,200",
+            "Technical guidance hotline €2,400"
+          ]
+        },
+        "cta_text_link": "Discuss your AI Sprint"
+      },
+      "copy_examples": {
+        "section_intro": "A decisive start, without the hype.",
+        "benefit_list_intro": "What leaders gain in four weeks:"
+      },
+      "tone": "Premium, direct, risk-mitigating."
+    },
+    "case_studies_overview": {
+      "layout": {
+        "hero": {
+          "type": "static_image",
+          "overlay": {
+            "headline": "Real results, explained with clarity.",
+            "subline": "Selected transformations from European mid-sized businesses."
+          }
+        },
+        "below_fold": {
+          "background": "white",
+          "tiles": [
+            {
+              "title": "Powercrumbs",
+              "href": "/case-studies/powercrumbs",
+              "thumb_hint": "industrial or construction visual"
+            },
+            {
+              "title": "Royal Vaassen",
+              "href": "/case-studies/royal-vaassen",
+              "thumb_hint": "manufacturing/packaging visual"
+            },
+            {
+              "title": "Confidential Manufacturing Client",
+              "href": "/case-studies/confidential-manufacturing",
+              "thumb_hint": "abstract, privacy-respecting visual"
+            }
+          ],
+          "grid_style": "calm spacing, strong typographic hierarchy; titles act as links."
+        }
+      },
+      "copy_examples": {
+        "section_headline": "Case studies",
+        "tile_teaser": "Explore the work"
+      },
+      "tone": "Credible, professional, results-focused."
+    },
+    "case_study_template": {
+      "layout": {
+        "hero": {
+          "type": "video_background",
+          "mood": "industry-relevant (factory, workshop, team collaboration), very restrained pace",
+          "overlay": {
+            "headline": "Case Study: {{client_name}}",
+            "subline": "{{short_summary}}"
+          }
+        },
+        "body_sections": [
+          {
+            "title": "Context",
+            "desc": "Industry setting and business drivers."
+          },
+          {
+            "title": "Challenge",
+            "desc": "Why existing approaches fell short."
+          },
+          {
+            "title": "Approach",
+            "desc": "What we did—brief, operationally specific."
+          },
+          {
+            "title": "Result",
+            "desc": "Outcomes with qualitative and quantitative signals."
+          }
+        ],
+        "reading_experience": "Quiet, focus-first; wide margins; no sidebars."
+      },
+      "copy_examples": {
+        "lede": "A focused program to convert intent into measurable outcomes.",
+        "result_snippet": "Cycle time reduced, adoption increased, controls enforced."
+      },
+      "tone": "Reflective, analytical, composed."
+    },
+    "insights_overview": {
+      "layout": {
+        "list_style": "each row has image left, title and excerpt right; title is a hyperlink; generous vertical rhythm.",
+        "filters": [
+          "All",
+          "Insights",
+          "Perspectives",
+          "Commentary"
+        ],
+        "articles_seed": [
+          {
+            "title": "The AI Deadlock",
+            "href": "/insights/the-ai-deadlock",
+            "excerpt": "Why pilots stall before production—and the governance, data, and change levers that unlock progress."
+          },
+          {
+            "title": "Securing AI Adoption in Microsoft Ecosystems",
+            "href": "/insights/securing-ai-microsoft",
+            "excerpt": "A leadership primer on safeguards, roles, and practical sequencing."
+          }
+        ]
+      },
+      "copy_examples": {
+        "hero_headline": "Insights",
+        "hero_subline": "Clarity in a noisy AI world.",
+        "read_more_label": "Read article"
+      },
+      "tone": "Educational, calm authority, journalistic clarity."
+    },
+    "insight_article_template": {
+      "layout": {
+        "hero": {
+          "type": "static_image",
+          "overlay": {
+            "headline": "{{article_title}}",
+            "subline": "{{short_subtitle}}"
+          }
+        },
+        "body": {
+          "reading": "long-form, high legibility, minimal distractions; images inline where helpful.",
+          "pull_quotes": false
+        }
+      },
+      "copy_examples": {
+        "lede": "A concise brief for leaders navigating AI decisions.",
+        "closing": "Implications for the next quarter: focus, safeguards, momentum."
+      },
+      "tone": "Analytical yet accessible."
+    },
+    "contact": {
+      "layout": {
+        "intro": "Short paragraph followed by a minimal form (name, email, message).",
+        "form_fields": [
+          "name",
+          "email",
+          "message"
+        ],
+        "response_note": "We reply within two business days.",
+        "discreet_booking_link": "Schedule a Teams conversation",
+        "footer": "Company info, logo, legal links; quiet presentation."
+      },
+      "copy_examples": {
+        "headline": "Talk to us",
+        "paragraph": "If you’re exploring AI with discipline and urgency, we’d be pleased to discuss your goals."
+      },
+      "tone": "Approachable professionalism with Swiss precision."
+    }
+  },
+  "experience": {
+    "navigation_behavior": "fixed top navbar; subtle scroll transitions; no heavy animations.",
+    "animations": "light fade and reveal; restrained parallax on hero only.",
+    "performance": "fast load, static-first, WCAG 2.1 AA accessible, responsive across breakpoints.",
+    "content_freshness": "site is static and timeless; insights can update without altering core structure."
+  }
+}
