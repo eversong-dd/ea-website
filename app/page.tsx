@@ -8,22 +8,26 @@ export default function Home() {
     {
       title: "The AI Deadlock",
       href: "/insights/the-ai-deadlock",
-      imageSrc: "/images/insights/ai-deadlock.jpg",
+      videoSrc: "/videos/chess.mp4",
+      category: "INSIGHTS",
     },
     {
-      title: "The Executive Sprint",
+      title: "Lead Time Prediction",
       href: "/ai-executive-sprint",
-      imageSrc: "/images/insights/executive-sprint.jpg",
+      videoSrc: "/videos/hourglass.mp4",
+      category: "CASE STUDY",
     },
     {
-      title: "Case: Powercrumbs",
+      title: "Payroll Backoffice",
       href: "/case-studies/powercrumbs",
-      imageSrc: "/images/case-studies/powercrumbs.jpg",
+      videoSrc: "/videos/book.mp4",
+      category: "CASE STUDY",
     },
     {
-      title: "Scaling AI Safely",
+      title: "The Pilot Trap",
       href: "/insights/scaling-ai-safely",
-      imageSrc: "/images/insights/scaling-ai.jpg",
+      videoSrc: "/videos/team.mp4",
+      category: "INSIGHTS",
     },
   ];
 
@@ -33,7 +37,7 @@ export default function Home() {
       <main className="bg-white">
         {/* Hero Section with calm video background */}
         <VideoHero
-          videoSrc="/videos/hero-bg.mp4"
+          videoSrc="/videos/leaves.mp4"
           headline="Clarity on AI for your business."
           subline="Practical, secure adoption on Microsoft—without the noise."
           ctaText="Talk to us"

@@ -13,7 +13,7 @@ interface VideoHeroProps {
 }
 
 export default function VideoHero({
-  videoSrc = '/videos/hero-bg.mp4',
+  videoSrc = '/videos/leaves.mp4',
   headline,
   subline,
   ctaText,
@@ -26,7 +26,6 @@ export default function VideoHero({
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Calm, restrained entrance animation
       const tl = gsap.timeline({
         defaults: { ease: 'power2.out' },
       });
@@ -66,26 +65,26 @@ export default function VideoHero({
   }, []);
 
   return (
-    <div ref={containerRef} className="relative h-screen w-full overflow-hidden">
-      {/* Video Background - calm, slow motion aesthetic */}
+    <div ref={containerRef} className="relative h-[40vh] md:h-[45vh] w-full overflow-hidden">
+      {/* Video Background */}
       <video
         autoPlay
         loop
         muted
         playsInline
-        className="absolute inset-0 h-full w-full object-cover scale-105"
+        className="absolute inset-0 w-full h-full object-cover"
       >
-        <source src={videoSrc} type="video/mp4" />
+        <source src="/videos/leaves.mp4" type="video/mp4" />
       </video>
 
-      {/* Subtle overlay for readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#001238]/60 via-[#001238]/40 to-[#001238]/70" />
+      {/* Grey Overlay */}
+      <div className="absolute inset-0 bg-black/40"></div>
 
       {/* Content - Swiss minimalist centered layout */}
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
         <h1
           ref={headlineRef}
-          className="mb-6 max-w-4xl text-4xl font-light tracking-tight text-[#F1F1F1] sm:text-5xl md:text-6xl lg:text-7xl"
+          className="mt-12 mb-6 max-w-4xl text-4xl font-light tracking-tight text-[#F1F1F1] sm:text-5xl md:text-6xl lg:text-7xl"
           style={{ letterSpacing: '-0.02em' }}
         >
           {headline}
