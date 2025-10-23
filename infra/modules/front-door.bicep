@@ -158,7 +158,7 @@ resource testRoute 'Microsoft.Cdn/profiles/afdEndpoints/routes@2024-02-01' = {
       '/*'
     ]
     forwardingProtocol: 'HttpsOnly'
-    linkToDefaultDomain: 'Enabled'
+    linkToDefaultDomain: 'Disabled'  // Only respond to custom domain
     httpsRedirect: 'Enabled'
     enabledState: 'Enabled'
   }
@@ -188,7 +188,7 @@ resource prodRoute 'Microsoft.Cdn/profiles/afdEndpoints/routes@2024-02-01' = {
       '/*'
     ]
     forwardingProtocol: 'HttpsOnly'
-    linkToDefaultDomain: 'Enabled'
+    linkToDefaultDomain: 'Disabled'  // Only respond to custom domain
     httpsRedirect: 'Enabled'
     enabledState: 'Enabled'
   }
