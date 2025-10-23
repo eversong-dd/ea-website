@@ -1,5 +1,5 @@
 // Web App Service module for Next.js application
-// Environment-specific tiers: Test (B1) for cost savings, Prod (S1) for performance
+// Environment-specific tiers: Test (B1) for cost savings, Prod (P0v3) for performance
 
 @description('Primary Azure region')
 param location string
@@ -10,7 +10,7 @@ param resourceToken string
 @description('Resource tags')
 param tags object
 
-@description('Environment name (test = B1, prod = S1)')
+@description('Environment name (test = B1, prod = P0v3)')
 param environmentName string
 
 @description('Managed Identity resource ID')
@@ -34,10 +34,10 @@ var appServiceSku = isTestEnvironment ? {
   family: 'B'
   capacity: 1
 } : {
-  name: 'S1'
-  tier: 'Standard'
-  size: 'S1'
-  family: 'S'
+  name: 'P0v3'
+  tier: 'PremiumV3'
+  size: 'P0v3'
+  family: 'Pv3'
   capacity: 1
 }
 
