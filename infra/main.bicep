@@ -14,6 +14,16 @@ param environmentName string
 @description('Primary Azure region for all resources')
 param location string = resourceGroup().location
 
+// Custom domain parameters
+@description('Test environment custom domain (e.g., test.eversong.ai)')
+param testCustomDomain string = 'test.eversong.ai'
+
+@description('Production environment custom domain (e.g., www.eversong.ai)')
+param prodCustomDomain string = 'www.eversong.ai'
+
+@description('Enable Azure Front Door for CDN and custom domains')
+param enableFrontDoor bool = true
+
 @description('Unique token for resource naming to avoid conflicts')
 var resourceToken = uniqueString(subscription().id, resourceGroup().id, location, environmentName)
 
@@ -65,6 +75,19 @@ module webApp 'modules/web-app.bicep' = {
     appInsightsConnectionString: monitoring.outputs.appInsightsConnectionString
     storageAccountName: storage.outputs.storageAccountName
     logAnalyticsWorkspaceId: monitoring.outputs.logAnalyticsWorkspaceId
+  }
+}
+
+// Azure Front Door for CDN and custom domains (prod environment only)
+module frontDoor 'modules/front-door.bicep' = if (enableFrontDoor && environmentName == 'prod') {
+  name: 'frontdoor-deployment'
+  params: {
+    resourceToken: resourceToken
+    tags: tags
+    testOriginHostname: 'app-rixoirdj4a3x6.azurewebsites.net'  // Test App Service
+    prodOriginHostname: webApp.outputs.webAppHostName           // Prod App Service
+    testCustomDomain: testCustomDomain
+    prodCustomDomain: prodCustomDomain
   }
 }
 
