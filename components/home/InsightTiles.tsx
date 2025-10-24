@@ -108,7 +108,7 @@ export default function InsightTiles({ tiles }: InsightTilesProps) {
             >
               <Link
                 href={tile.href}
-                className="group block aspect-[1.1/1.634] relative overflow-hidden bg-white shadow-lg active:shadow-2xl transition-shadow duration-500"
+                className="group block aspect-[1.1/1.634] relative overflow-hidden bg-[#0C0C0C] shadow-lg active:shadow-2xl transition-shadow duration-500"
               >
                 <TileContent tile={tile} />
               </Link>
@@ -135,7 +135,7 @@ export default function InsightTiles({ tiles }: InsightTilesProps) {
               >
                 <Link
                   href={tile.href}
-                  className="group block aspect-[1.1/1.634] relative overflow-hidden bg-white shadow-lg hover:shadow-2xl transition-shadow duration-500"
+                  className="group block aspect-[1.1/1.634] relative overflow-hidden bg-[#0C0C0C] shadow-lg hover:shadow-2xl transition-shadow duration-500"
                   onMouseEnter={(e) => {
                     const video = e.currentTarget.querySelector('video');
                     if (video) video.play();

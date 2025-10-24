@@ -1,6 +1,14 @@
 import type { Metadata } from "next";
+import { Roboto } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/animations/SmoothScroll";
+
+const roboto = Roboto({
+  weight: ['300', '400', '500'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-roboto',
+});
 
 export const metadata: Metadata = {
   title: "Eversong AI - Making AI Valuable, Secure and Practical for SMEs on Microsoft",
@@ -31,7 +39,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased">
+      <body className={`${roboto.variable} antialiased`}>
         <SmoothScroll />
         {children}
       </body>
